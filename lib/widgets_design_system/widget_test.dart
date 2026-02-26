@@ -7,17 +7,15 @@ class WidgetTestView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Button Test")),
+      appBar: AppBar(title: const Text("Widgets Test")),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Primary"),
-            const SizedBox(height: 12),
             AppButton(
               child: Text("boton"),
-              variant: AppButtonVariant.double, //has lots of variants
+              variant: AppButtonVariant.double,
               onPressed: () => {},
             ),
 
