@@ -109,7 +109,7 @@ class _AveSelectCardState extends State<AveSelectCard> {
                 color: isDisabled
                     ? theme.disabledColor
                     : (widget.selected ? Colors.white : primary),
-                fontWeight: widget.selected ? FontWeight.w600 : FontWeight.w500,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ],
@@ -175,9 +175,7 @@ class _AveSelectCardState extends State<AveSelectCard> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: widget.selected
-                        ? FontWeight.w600
-                        : FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     color: textColor,
                   ),
                 ),

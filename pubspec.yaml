@@ -1,6 +1,6 @@
 name: avefin_lms_mobile_app
 description: "Avefin mobile app"
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
@@ -29,7 +29,6 @@ flutter:
 
   assets:
     - assets/
-
 
   fonts:
     - family: Satoshi
