@@ -18,12 +18,12 @@ class AppTextTheme {
 
 TextTheme lightText = AppTextTheme.base.apply(
   fontFamily: 'Satoshi',
-  bodyColor: AppColors.primary,
-  displayColor: AppColors.primary,
+  bodyColor: AppColors.primaryDark,
+  displayColor: AppColors.primaryDark,
 );
 
 TextTheme darkText = AppTextTheme.base.apply(
   fontFamily: 'Satoshi',
-  bodyColor: AppColors.darkTextPrimary,
-  displayColor: AppColors.darkTextPrimary,
+  bodyColor: AppColors.primaryDarkDark,
+  displayColor: AppColors.primaryDarkDark,
 );

@@ -10,7 +10,7 @@ final lightTheme = ThemeData(
 
   colorScheme: const ColorScheme.light(
     primary: AppColors.primaryBlue,
-    secondary: AppColors.primary,
+    secondary: AppColors.primaryDark,
     surface: AppColors.lightSurface,
     background: AppColors.lightBackgroundPrimary,
   ),

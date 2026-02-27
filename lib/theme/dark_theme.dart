@@ -9,8 +9,8 @@ final darkTheme = ThemeData(
   textTheme: darkText,
 
   colorScheme: const ColorScheme.dark(
-    primary: AppColors.primaryBlue,
-    secondary: Color.fromARGB(255, 158, 171, 224),
+    primary: AppColors.primaryBlueDark,
+    secondary: AppColors.primaryDarkDark,
     surface: AppColors.darkSurface,
     background: AppColors.darkBackgroundPrimary,
   ),
@@ -35,18 +35,18 @@ final darkTheme = ThemeData(
 
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: AppColors.primaryBlue, width: 1.5),
+      borderSide: BorderSide(color: AppColors.primaryBlueDark, width: 1.5),
     ),
 
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: AppColors.error, width: 1),
+      borderSide: BorderSide(color: AppColors.utilityErrorDark, width: 1),
     ),
 
     focusedErrorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: AppColors.error, width: 1.5),
+      borderSide: BorderSide(color: AppColors.utilityErrorDark, width: 1.5),
     ),
-    floatingLabelStyle: TextStyle(color: AppColors.primaryBlue),
+    floatingLabelStyle: TextStyle(color: AppColors.primaryBlueDark),
   ),
 );
