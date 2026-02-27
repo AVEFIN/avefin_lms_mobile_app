@@ -1,9 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:avefin_lms_mobile_app/widgets_design_system/ave_select_card.dart';
 import 'package:avefin_lms_mobile_app/widgets_design_system/button.dart';
-import 'package:flutter/material.dart';
+import 'package:avefin_lms_mobile_app/widgets_design_system/step_navigation.dart';
 
-class WidgetTestView extends StatelessWidget {
+class WidgetTestView extends StatefulWidget {
   const WidgetTestView({super.key});
+
+  @override
+  State<WidgetTestView> createState() => _WidgetTestViewState();
+}
+
+class _WidgetTestViewState extends State<WidgetTestView> {
+  int currentStep = 0;
+  String? personType = "fisica"; // mock enabled state
+
+  final List<StepItem> steps = const [
+    StepItem(icon: Icon(Icons.info_outline), label: "Info. general"),
+    StepItem(icon: Icon(Icons.home_outlined), label: "Domicilio"),
+    StepItem(icon: Icon(Icons.phone_outlined), label: "Contacto"),
+    StepItem(icon: Icon(Icons.description_outlined), label: "Resumen"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +30,38 @@ class WidgetTestView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppButton(
-              child: Text("boton"),
-              variant: AppButtonVariant.primary,
-              onPressed: () => {},
+            /// Step Navigation Example
+            StepNavigation(
+              disabled: personType == null,
+              steps: steps,
+              currentStep: currentStep,
+              onStepChange: (index) {
+                setState(() => currentStep = index);
+              },
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 32),
+
+            /// Button Example
+            AppButton(
+              child: const Text("Botón primario"),
+              variant: AppButtonVariant.primary,
+              onPressed: () {
+                debugPrint("Button pressed");
+              },
+            ),
+
+            const SizedBox(height: 32),
+
+            /// Select Card Example
             AveSelectCard(
-              icon: Icon(Icons.home_sharp),
-              label: "test",
-              onTap: () => {},
+              icon: const Icon(Icons.home_sharp),
+              label: "Seleccionar domicilio",
+              onTap: () {
+                debugPrint("Card tapped");
+              },
               variant: AveSelectCardVariant.defaultVariant,
+              selected: true,
             ),
           ],
         ),
