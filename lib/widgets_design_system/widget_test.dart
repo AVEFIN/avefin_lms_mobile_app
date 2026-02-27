@@ -16,7 +16,7 @@ class WidgetTestView extends StatelessWidget {
           children: [
             AppButton(
               child: Text("boton"),
-              variant: AppButtonVariant.double,
+              variant: AppButtonVariant.primary,
               onPressed: () => {},
             ),
 
@@ -26,20 +26,6 @@ class WidgetTestView extends StatelessWidget {
               label: "test",
               onTap: () => {},
               variant: AveSelectCardVariant.defaultVariant,
-              selected: true,
-            ),
-            AveSelectCard(
-              icon: Icon(Icons.home_sharp),
-              label: "test",
-              onTap: () => {},
-              variant: AveSelectCardVariant.blueBackground,
-              selected: true,
-            ),
-            AveSelectCard(
-              icon: Icon(Icons.home_sharp),
-              label: "test",
-              onTap: () => {},
-              variant: AveSelectCardVariant.small,
             ),
           ],
         ),
