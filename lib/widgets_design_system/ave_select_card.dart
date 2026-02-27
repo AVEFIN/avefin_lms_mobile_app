@@ -136,7 +136,12 @@ class _AveSelectCardState extends State<AveSelectCard> {
 
       content = Container(
         width: widget.width,
-        constraints: const BoxConstraints(minHeight: 190, minWidth: 150),
+        constraints: const BoxConstraints(
+          minHeight: 190,
+          minWidth: 150,
+          maxWidth: 160,
+          maxHeight: 200,
+        ),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(20),
@@ -169,14 +174,17 @@ class _AveSelectCardState extends State<AveSelectCard> {
                   data: IconThemeData(size: 40, color: textColor),
                   child: widget.icon,
                 ),
-                const SizedBox(height: 55),
-                Text(
-                  widget.label,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    color: textColor,
+                const SizedBox(height: 40),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    widget.label,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: textColor,
+                    ),
                   ),
                 ),
               ],

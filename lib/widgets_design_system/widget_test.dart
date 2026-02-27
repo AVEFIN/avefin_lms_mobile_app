@@ -56,7 +56,7 @@ class _WidgetTestViewState extends State<WidgetTestView> {
             /// Select Card Example
             AveSelectCard(
               icon: const Icon(Icons.home_sharp),
-              label: "Seleccionar domicilio",
+              label: "Persona moral (empresa)",
               onTap: () {
                 debugPrint("Card tapped");
               },
