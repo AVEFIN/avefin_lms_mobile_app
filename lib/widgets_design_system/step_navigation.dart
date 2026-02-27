@@ -117,7 +117,7 @@ class StepNavigation extends StatelessWidget {
   }
 }
 
-class _StepPill extends StatelessWidget {
+class _StepPill extends StatefulWidget {
   final StepItem step;
   final bool isCompleted;
   final bool isActive;
@@ -141,53 +141,74 @@ class _StepPill extends StatelessWidget {
   });
 
   @override
+  State<_StepPill> createState() => _StepPillState();
+}
+
+class _StepPillState extends State<_StepPill> {
+  bool _pressed = false;
+
+  void _setPressed(bool value) {
+    if (widget.disabled) return;
+    setState(() => _pressed = value);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final isFilled = isCompleted || isActive;
+    final isFilled = widget.isCompleted || widget.isActive;
 
     final background = isFilled
-        ? primary
-        : (variant == StepNavigationVariant.secondary
+        ? widget.primary
+        : (widget.variant == StepNavigationVariant.secondary
               ? Colors.white
               : AppColors.lightBorderSubtle);
 
-    final textColor = isFilled ? Colors.white : primary;
+    final textColor = isFilled ? Colors.white : widget.primary;
 
     return GestureDetector(
-      onTap: disabled ? null : onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-        decoration: BoxDecoration(
-          color: background,
-          borderRadius: BorderRadius.circular(999),
-          border: Border.all(
-            color: isFilled
-                ? primary
-                : AppColors.lightBorderSubtle.withAlpha(80),
+      onTapDown: (_) => _setPressed(true),
+      onTapUp: (_) => _setPressed(false),
+      onTapCancel: () => _setPressed(false),
+      onTap: widget.disabled ? null : widget.onTap,
+      child: AnimatedScale(
+        scale: _pressed ? 0.98 : 1.0,
+        duration: const Duration(milliseconds: 90),
+        curve: Curves.easeOut,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 250),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+          decoration: BoxDecoration(
+            color: background,
+            borderRadius: BorderRadius.circular(999),
+            border: Border.all(
+              color: isFilled
+                  ? widget.primary
+                  : AppColors.lightBorderSubtle.withAlpha(80),
+            ),
           ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (step.icon != null)
-              IconTheme(
-                data: IconThemeData(
-                  size: 18,
-                  color: isFilled ? textColor : primary.withAlpha(80),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (widget.step.icon != null)
+                IconTheme(
+                  data: IconThemeData(
+                    size: 18,
+                    color: isFilled ? textColor : widget.primary.withAlpha(80),
+                  ),
+                  child: widget.step.icon!,
                 ),
-                child: step.icon!,
-              ),
-            if (showLabel && step.icon != null) const SizedBox(width: 8),
-            if (showLabel)
-              Text(
-                step.label,
-                style: TextStyle(
-                  color: textColor,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
+              if (widget.showLabel && widget.step.icon != null)
+                const SizedBox(width: 8),
+              if (widget.showLabel)
+                Text(
+                  widget.step.label,
+                  style: TextStyle(
+                    color: textColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                  ),
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
       ),
     );

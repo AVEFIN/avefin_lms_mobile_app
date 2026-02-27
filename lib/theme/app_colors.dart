@@ -23,11 +23,11 @@ class AppColors {
   // CHART COLORS — LIGHT MODE
   // =======================
 
-  static const chart1 = Color(0xFFF97316); // oklch(0.646 0.222 41.116)
-  static const chart2 = Color(0xFF14B8A6); // oklch(0.6 0.118 184.704)
-  static const chart3 = Color(0xFF1E3A8A); // oklch(0.398 0.07 227.392)
-  static const chart4 = Color(0xFFFACC15); // oklch(0.828 0.189 84.429)
-  static const chart5 = Color(0xFFF59E0B); // oklch(0.769 0.188 70.08)
+  static const chart1 = Color(0xFFF97316);
+  static const chart2 = Color(0xFF14B8A6);
+  static const chart3 = Color(0xFF1E3A8A);
+  static const chart4 = Color(0xFFFACC15);
+  static const chart5 = Color(0xFFF59E0B);
 
   // =======================
   // SUCCESS / WARNING / ERROR — LIGHT MODE
