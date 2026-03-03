@@ -1,4 +1,4 @@
-import 'package:avefin_lms_mobile_app/auth/models/auth/auth_user.dart';
+import 'package:avefin_lms_mobile_app/models/auth/auth_user.dart';
 
 class AuthState {
   final bool isAuthenticated;

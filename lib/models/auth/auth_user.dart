@@ -1,4 +1,4 @@
-import 'package:avefin_lms_mobile_app/auth/models/person_model.dart';
+import 'package:avefin_lms_mobile_app/models/person_model.dart';
 
 class User {
   final String id;
