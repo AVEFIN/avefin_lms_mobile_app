@@ -127,7 +127,7 @@ class _AppButtonState extends State<AppButton> {
         border: border != null ? Border.fromBorderSide(border) : null,
       ),
       alignment: Alignment.center,
-      child: DefaultTextStyle(
+      child: DefaultTextStyle.merge(
         style: TextStyle(color: foreground, fontWeight: FontWeight.w400),
         child: widget.child,
       ),
@@ -180,7 +180,7 @@ class _AppButtonState extends State<AppButton> {
             borderRadius: BorderRadius.circular(6),
           ),
           alignment: Alignment.center,
-          child: DefaultTextStyle(
+          child: DefaultTextStyle.merge(
             style: TextStyle(color: textColor, fontWeight: FontWeight.w400),
             child: widget.child,
           ),

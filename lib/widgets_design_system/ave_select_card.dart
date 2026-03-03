@@ -174,14 +174,14 @@ class _AveSelectCardState extends State<AveSelectCard> {
                   data: IconThemeData(size: 40, color: textColor),
                   child: widget.icon,
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 44),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     widget.label,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: textColor,
                     ),
