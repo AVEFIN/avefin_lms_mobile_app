@@ -1,4 +1,4 @@
-import 'package:avefin_lms_mobile_app/auth/models/auth_response.dart';
+import 'package:avefin_lms_mobile_app/auth/models/auth/auth_response.dart';
 import 'package:avefin_lms_mobile_app/utils/dio_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

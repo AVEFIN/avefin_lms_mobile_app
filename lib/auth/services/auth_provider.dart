@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:avefin_lms_mobile_app/auth/models/auth_response.dart';
-import 'package:avefin_lms_mobile_app/auth/models/auth_state_model.dart';
-import 'package:avefin_lms_mobile_app/auth/models/auth_user.dart';
+import 'package:avefin_lms_mobile_app/auth/models/auth/auth_response.dart';
+import 'package:avefin_lms_mobile_app/auth/models/auth/auth_state_model.dart';
+import 'package:avefin_lms_mobile_app/auth/models/auth/auth_user.dart';
 import 'package:avefin_lms_mobile_app/utils/secure_storage_provider.dart';
 import 'package:avefin_lms_mobile_app/environment.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
